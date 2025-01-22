@@ -16,3 +16,6 @@
 [submodule "00_build/mysql"]
 	path = 00_build/mysql
 	url = https://github.com/nchc-ai/mysql.git
+[submodule "00_build/rejson"]
+	path = 00_build/rejson
+	url = https://github.com/nchc-ai/rejson.git
