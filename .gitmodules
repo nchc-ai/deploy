@@ -13,3 +13,6 @@
 [submodule "00_build/ui-signup"]
 	path = 00_build/ui-signup
 	url = https://github.com/nchc-ai/ui-signup.git
+[submodule "00_build/mysql"]
+	path = 00_build/mysql
+	url = https://github.com/nchc-ai/mysql.git
