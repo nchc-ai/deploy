@@ -1,3 +1,15 @@
 [submodule "00_build/nfs-client"]
 	path = 00_build/nfs-client
 	url = https://github.com/nchc-ai/nfs-client.git
+[submodule "00_build/backend-api"]
+	path = 00_build/backend-api
+	url = https://github.com/nchc-ai/backend-api.git
+[submodule "00_build/course-crd-operator"]
+	path = 00_build/course-crd-operator
+	url = https://github.com/nchc-ai/course-crd-operator.git
+[submodule "00_build/ui"]
+	path = 00_build/ui
+	url = https://github.com/nchc-ai/ui.git
+[submodule "00_build/ui-signup"]
+	path = 00_build/ui-signup
+	url = https://github.com/nchc-ai/ui-signup.git
