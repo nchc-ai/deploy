@@ -1,0 +1,5 @@
+.idea/*
+nchc-tls-secret.yaml
+docker-secret.yaml
+.DS_Store
+*nip*io*
