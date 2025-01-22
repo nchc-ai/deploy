@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-COURSE_CRD_IMG=ghcr.io/nchc-ai/course-operator
+COURSE_CRD_IMG=ghcr.io/nchc-ai/course-crd-operator
 DB_IMG=ghcr.io/nchc-ai/mysql
 
 

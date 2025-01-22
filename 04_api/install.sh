@@ -4,7 +4,7 @@
 # Image
 DB_IMG=ghcr.io/nchc-ai/mysql
 REDIS_IMG=ghcr.io/nchc-ai/rejson
-API_IMG=ghcr.io/nchc-ai/api
+API_IMG=ghcr.io/nchc-ai/backend-api
 
 
 echo ""

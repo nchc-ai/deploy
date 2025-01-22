@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-PROVISIONER_IMG=ghcr.io/nchc-ai/nfs-client-provisioner
+PROVISIONER_IMG=ghcr.io/nchc-ai/nfs-client
 
 echo ""
 echo "Install NFS provisioner for $SC_NAME"
