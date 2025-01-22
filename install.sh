@@ -68,7 +68,7 @@ case $DEST_CLUSTER_INPUT in
  esac
 
 echo ""
-LAST_VER="main"
+LAST_VER="HEAD"
 export VERSION
 read -p "Enter installation version [ v2025.02 ]: " VERSION
 
@@ -76,7 +76,7 @@ read -p "Enter installation version [ v2025.02 ]: " VERSION
       v2025.02) ;;
       *) 
       VERSION=$LAST_VER
-      echo "not valid version, use default ver. $VERSION" ;;
+      echo "not valid version, use $VERSION for local build image." ;;
  esac
 
 
@@ -145,18 +145,21 @@ export DOAMINNAME=${DOAMINNAME:-nchc.org.tw}
 
 echo ""
 DEFAULT_URL="${VERSION/./-}-$NS_PREFIX-ui.$DOAMINNAME"
+DEFAULT_URL=$(echo $DEFAULT_URL | tr '[:upper:]' '[:lower:]')
 read -p "Enter URL for Web UI [$DEFAULT_URL]: " UI_URL
 export UI_URL=${UI_URL:-$DEFAULT_URL}
 
 
 echo ""
 DEFAULT_URL="${VERSION/./-}-$NS_PREFIX-nodeport.$DOAMINNAME"
+DEFAULT_URL=$(echo $DEFAULT_URL | tr '[:upper:]' '[:lower:]')
 read -p "Enter NodePort Endpoint [$DEFAULT_URL]: " NODEPORT_URL
 export NODEPORT_URL=${NODEPORT_URL:-$DEFAULT_URL}
 
 
 echo ""
 DEFAULT_URL="${VERSION/./-}-$NS_PREFIX-admin.$DOAMINNAME"
+DEFAULT_URL=$(echo $DEFAULT_URL | tr '[:upper:]' '[:lower:]')
 read -p "Enter URL for admin UI  [$DEFAULT_URL]: " ADMIN_UI_URL
 export ADMIN_UI_URL=${ADMIN_UI_URL:-$DEFAULT_URL}
 
