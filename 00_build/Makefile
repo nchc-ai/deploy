@@ -23,3 +23,6 @@ clean:
 		dir=$${dir%/}; \
 		docker rmi ghcr.io/nchc-ai/$$dir:HEAD 2> /dev/null || true ; \
 	done
+
+update:
+	git submodule update --remote --merge
