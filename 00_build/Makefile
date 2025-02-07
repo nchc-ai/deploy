@@ -14,14 +14,32 @@ build:
 load:
 	@for dir in $(SUBMODULES_DIR_LS); do \
 		dir=$${dir%/}; \
-		kind load docker-image ghcr.io/nchc-ai/$$dir:HEAD; \
+		cd $$dir; \
+		commit_hash=`git rev-parse --short HEAD`; \
+		ret=`git describe --contains $$commit_hash 1>&2 2> /dev/null; echo $$?`; \
+		if [ $$ret -eq 0 ]; then \
+			tag=`git describe --contains $$commit_hash`; \
+		else \
+			tag=HEAD; \
+		fi; \
+		kind load docker-image ghcr.io/nchc-ai/$$dir:$$tag; \
+		cd ..; \
 	done
 
 clean:
 	@for dir in $(SUBMODULES_DIR_LS); do \
-		find $$dir -mindepth 1 -delete; \
 		dir=$${dir%/}; \
-		docker rmi ghcr.io/nchc-ai/$$dir:HEAD 2> /dev/null || true ; \
+		cd $$dir; \
+		commit_hash=`git rev-parse --short HEAD`; \
+		ret=`git describe --contains $$commit_hash 1>&2 2> /dev/null; echo $$?`; \
+		if [ $$ret -eq 0 ]; then \
+			tag=`git describe --contains $$commit_hash`; \
+		else \
+			tag=HEAD; \
+		fi; \
+		docker rmi ghcr.io/nchc-ai/$$dir:$$tag 2> /dev/null || true ; \
+		cd ..; \
+		find $$dir -mindepth 1 -delete; \
 	done
 
 update:
