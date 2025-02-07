@@ -8,6 +8,7 @@
 * Prepare a OAuth Client ID and Secret from Google or GitHub. 
   * [Google OAuth Reference Video](https://youtu.be/75brbKarbn0?t=72)
   * [Github OAuth Reference Video](https://youtu.be/Bx1JqfPROXA?t=230)
+  * Authorization callback URL has form of `https://<FQDN>/user/classroom-manage`
 * Install [KinD](https://kind.sigs.k8s.io/docs/user/ingress/#option-2-extraportmapping) with  ingress enabled.
 * Prepare a NFS for storing course data. You can create a NFS contianer and connect it to the network which KinD used, the used default network is `kind`.
 
